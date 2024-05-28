@@ -19,7 +19,9 @@ The Investment Calculator is a tool designed to help users calculate the future 
 - [Examples](#examples)
 - [Contributing](#contributing)
 - [License](#license)
-<img src=""></img>
+
+  
+<img src="https://github.com/Pavankumar07s/udemy-investment--calculator/blob/main/public/Screenshot%20from%202024-05-28%2016-56-53.png"></img>
 ## Installation
 
 To use the Investment Calculator, clone the repository and install the necessary dependencies.
