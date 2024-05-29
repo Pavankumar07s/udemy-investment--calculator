@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-content: center;
+  padding: 1rem; /* Add padding to prevent content from touching the edges */
 }
 
 #header {
@@ -34,7 +35,8 @@ body {
 
 #user-input {
   padding: 1rem;
-  max-width: 90%;
+  width: 100%; /* Ensure it takes full width of the container */
+  max-width: 90%; /* Adjust max-width for responsiveness */
   margin: 1rem auto;
   border-radius: 4px;
   background: linear-gradient(180deg, #307e6c, #2b996d);
@@ -65,12 +67,15 @@ body {
 }
 
 #result {
-  max-width: 90%;
+  width: 100%; /* Ensure it takes full width of the container */
+  max-width: 90%; /* Adjust max-width for responsiveness */
   margin: 1rem auto;
-  padding: 1rem;
-  table-layout: fixed;
-  border-spacing: 1rem;
-  text-align: right;
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+#result table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 #result thead {
@@ -84,12 +89,66 @@ body {
   color: #c2e9e0;
 }
 
+#result th, #result td {
+  padding: 0.5rem;
+  border: 1px solid #76c0ae; /* Add border for better readability */
+  text-align: right;
+}
+
 .center {
   text-align: center;
 }
 
 /* Media Queries */
+@media (max-width: 300px) {
+  body {
+    padding: 0.5rem; /* Reduce padding for very small screens */
+  }
+
+  #header img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #header h1 {
+    font-size: 1rem;
+  }
+
+  #user-input {
+    padding: 0.5rem;
+    max-width: 90%;
+    margin: 1rem auto;
+  }
+
+  #user-input input {
+    font-size: 0.85rem;
+    padding: 0.25rem;
+  }
+
+  #result {
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+
+  #result th, #result td {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  #result thead {
+    font-size: 0.7rem;
+  }
+
+  #result tbody {
+    font-size: 0.75rem;
+  }
+}
+
 @media (min-width: 576px) {
+  body {
+    padding: 2rem; /* Increase padding for larger screens */
+  }
+
   #header img {
     width: 5rem;
     height: 5rem;
@@ -110,15 +169,23 @@ body {
   }
 
   #user-input label {
-    font-size: 0.5rem;
+    font-size: 0.75rem; /* Adjust font size */
   }
 
   #result thead {
-    font-size: 0.7rem;
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  #result tbody {
+    font-size: 0.9rem; /* Adjust font size */
   }
 }
 
 @media (min-width: 768px) {
+  body {
+    padding: 3rem; /* Increase padding for larger screens */
+  }
+
   #header img {
     width: 6rem;
     height: 6rem;
@@ -127,9 +194,21 @@ body {
   #header h1 {
     font-size: 2rem;
   }
+
+  #user-input {
+    max-width: 40rem;
+  }
+
+  #result {
+    max-width: 60rem;
+  }
 }
 
 @media (min-width: 992px) {
+  body {
+    padding: 4rem; /* Increase padding for larger screens */
+  }
+
   #header img {
     width: 7rem;
     height: 7rem;
@@ -138,9 +217,21 @@ body {
   #header h1 {
     font-size: 2.5rem;
   }
+
+  #user-input {
+    max-width: 50rem;
+  }
+
+  #result {
+    max-width: 70rem;
+  }
 }
 
 @media (min-width: 1200px) {
+  body {
+    padding: 5rem; /* Increase padding for larger screens */
+  }
+
   #header img {
     width: 8rem;
     height: 8rem;
@@ -148,5 +239,13 @@ body {
 
   #header h1 {
     font-size: 3rem;
+  }
+
+  #user-input {
+    max-width: 60rem;
+  }
+
+  #result {
+    max-width: 80rem;
   }
 }
